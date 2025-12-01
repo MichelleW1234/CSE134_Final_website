@@ -1,12 +1,25 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    const cardNames = ["arcade", "tritonturnup", "snowAgent", "wordProcessor"];
+    const cardNames = ["arcade", "tritonturnup", "snowAgent", "scripta"];
 
     const cards = document.querySelectorAll("project-card");
 
     const forwards = document.getElementById("forwards-button");
     const backwards = document.getElementById("backwards-button");
 
+    cards.forEach(card => {
+
+        if (card.getAttribute("name") === "arcade") {
+            
+            card.classList.remove("hidden");
+
+        } else {
+            
+            card.classList.add("hidden");
+
+        }
+
+    });
 
     forwards.addEventListener("click", () => {
 
@@ -38,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function updateCardForwards(){
 
-        const currentCard = document.querySelector(".card:not(.hidden)");
+        const currentCard = document.querySelector("project-card:not(.hidden)");
         const cardName = currentCard ? currentCard.getAttribute("name") : null;
 
         const currIndex = cardNames.indexOf(cardName);
@@ -59,7 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function updateCardBackwards(){
 
-        const currentCard = document.querySelector(".card:not(.hidden)");
+        const currentCard = document.querySelector("project-card:not(.hidden)");
         const cardName = currentCard ? currentCard.getAttribute("name") : null;
 
         const currIndex = cardNames.indexOf(cardName);
