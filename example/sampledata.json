@@ -1,0 +1,80 @@
+{
+    "infiniti-q45-1991": {
+        "year": 1991,
+        "make": "Infiniti",
+        "model": "Q45",
+        "image_url": "https://pub-940f423c24074b9ebe0052cc5f384faa.r2.dev/IMG_0557.jpg",
+        "deets": "Ugly and unremarkable but also very, very uncommon."
+    },
+    "lamborghini-countach-lp500-1983": {
+        "year": 1983,
+        "make": "Lamborghini",
+        "model": "Countach LP500",
+        "image_url": "https://pub-940f423c24074b9ebe0052cc5f384faa.r2.dev/IMG_2207.jpg",
+        "deets": "THIS...is Doug Demuro's actual Lamborghini! Spotted at Monterey Car Week. Doug can be seen behind the driver's side door."
+    },
+    "bentley-batur-2025": {
+        "year": 2025,
+        "make": "Bentley",
+        "model": "Batur",
+        "image_url": "https://pub-940f423c24074b9ebe0052cc5f384faa.r2.dev/IMG_2526.jpg",
+        "deets": "One of 16 in the world, with a starting price of over $2.1 mil."
+    },
+    "mercedes-benz-sls-amg-2011": {
+        "year": 2011,
+        "make": "Mercedes-Benz",
+        "model": "SLS AMG",
+        "image_url": "https://pub-940f423c24074b9ebe0052cc5f384faa.r2.dev/IMG_4119.jpg",
+        "deets": "Retro styled sports car from the early 2010s."
+    },
+    "nash-metropolitan-1959": {
+        "year": 1959,
+        "make": "Nash",
+        "model": "Metropolitan",
+        "image_url": "https://pub-940f423c24074b9ebe0052cc5f384faa.r2.dev/IMG_4870.jpg",
+        "deets": "In an alternative universe where the American auto industry became a microcar powerhouse..."
+    },
+    "bmw-m5-2003": {
+        "year": 2003,
+        "make": "BMW",
+        "model": "M5",
+        "image_url": "https://pub-940f423c24074b9ebe0052cc5f384faa.r2.dev/IMG_6262.jpg",
+        "deets": "Affectionally called 'God's chariot' by some fans."
+    },
+    "ford-mustang-1970": {
+        "year": 1970,
+        "make": "Ford",
+        "model": "Mustang",
+        "image_url": "https://pub-940f423c24074b9ebe0052cc5f384faa.r2.dev/IMG_4557.jpg"
+    },
+    "pontiac-solstice-2009": {
+        "year": 2009,
+        "make": "Pontiac",
+        "model": "Solstice",
+        "image_url": "https://pub-940f423c24074b9ebe0052cc5f384faa.r2.dev/IMG_4846.jpg"
+    },
+    "buick-century-1988": {
+        "year": 1988,
+        "make": "Buick",
+        "model": "Century",
+        "image_url": "https://pub-940f423c24074b9ebe0052cc5f384faa.r2.dev/IMG_4823.jpg"
+    },
+    "cadillac-cts-v-2010": {
+        "year": 2010,
+        "make": "Cadillac",
+        "model": "CTS-V",
+        "image_url": "https://pub-940f423c24074b9ebe0052cc5f384faa.r2.dev/IMG_4801.jpg"
+    },
+    "lexus-rc-f-2015": {
+        "year": 2015,
+        "make": "Lexus",
+        "model": "RC-F",
+        "image_url": "https://pub-940f423c24074b9ebe0052cc5f384faa.r2.dev/IMG_4675.jpg"
+    },
+    "suzuki-wagon-r-1998": {
+        "year": 1998,
+        "make": "Suzuki",
+        "model": "Wagon R",
+        "image_url": "https://pub-940f423c24074b9ebe0052cc5f384faa.r2.dev/IMG_4746.jpg"
+    }
+}

@@ -1,0 +1,70 @@
+{
+    "projectOne": {
+        "cardName": "arcade",
+        "projectTitle": "Arcade",
+        "projectType": "Personal",
+        "projectAssociation": "N/A",
+        "projectImage": "./assets/arcade.svg",
+        "projectDescription": [
+            "Developed an interactive macOs retro-style game with web tech (React (JavaScript), HTML, CSS, Electron)",
+            "Controlled animation flow by syncing React component states with gameplay logic, triggering re-renders and animating game elements in response to user actions",
+            "Designed an engaging user interface with hand-drawn visual assets, CSS animations, background music, and sound effects to enhance the player experience",
+            "Implemented game logic and dynamic outcomes based on user input, with real-time feedback",
+            "Enabled keyboard navigation within the game interface by mapping key events to UI actions",
+            "Implemented persistent data storage using Electron Store to save and restore user progress across app sessions"
+        ],
+        "projectMedia": [
+            { "name": "Visit Github Repo", "link": "https://github.com/MichelleW1234/Arcade", "target": "_blank" },
+            { "name": "Go to Releases", "link": "https://github.com/MichelleW1234/Arcade/releases", "target": "_blank" },
+            { "name": "Go to media section", "link": "project-one-media.html", "target": null}
+        ]
+    },
+    "projectTwo": {
+        "cardName": "tritonturnup",
+        "projectTitle": "TritonTurnUp",
+        "projectType": "Academic",
+        "projectAssociation": "UCSD",
+        "projectImage": "./assets/tritonturnup.svg",
+        "projectDescription": [
+            "A webapp that allows UCSD students to browse a detailed list of upcoming and ongoing events affiliated with the school. Upon logging in, students can add these events to their calendars based on their schedule availability, promoting socialization and stress relief by raising awareness of fun and engaging events within the Triton community.",
+            "Contributed to UI/UX and front-end in an Agile team using GitHub",
+            "Conducted user research and testing to improve engagement",
+            "Mentored by professor with extensive software development experience"
+        ],
+        "projectMedia": [
+            { "name": "Visit Github Repo", "link":  "https://github.com/MichelleW1234/CSE-110-Project", "target": "_blank"},
+            { "name": "Go to media section", "link": "project-two-media.html", "target": null}
+        ]
+    },
+    "projectThree":{
+        "cardName": "snowAgent",
+        "projectTitle": "Snow Agent Advertisement",
+        "projectType": "Internship",
+        "projectAssociation": "Decode AI",
+        "projectImage": "./assets/snowagent.svg",
+        "projectDescription": [
+            "Assisted in prompt engineering to generate photo and video assets for client advertising campaigns",
+            "Used AI software such as Midjourney and Kling to generate photos and videos.",
+            "Wrote detailed image prompts from basic descriptions"
+        ],
+        "projectMedia": [
+            { "name": "Go to media section", "link": "project-three-media.html", "target": null}
+        ]
+    },
+    "projectFour": {
+        "cardName": "scripta",
+        "projectTitle": "Scripta",
+        "projectType": "Personal",
+        "projectAssociation": "N/A",
+        "projectImage": "./assets/Scripta.svg",
+        "projectDescription": [
+            "Developed a React-based word processor that enables users to customize documents with dynamic features such as changing background color, font, font color, and title styling.",
+            "Implemented document management functionality, allowing users to save, delete (move to trash), and search for documents efficiently.",
+            "Built the application using React, JavaScript, and CSS, ensuring an interactive, responsive, and visually appealing user interface."
+        ],
+        "projectMedia": [
+            { "name": "Visit Github Repo", "link": "https://github.com/MichelleW1234/Scripta", "target": "_blank"},
+            { "name": "Go to media section", "link": "project-four-media.html", "target": null}
+        ]
+    }
+}

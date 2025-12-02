@@ -6,33 +6,38 @@ class ProjectCard extends HTMLElement {
 
     connectedCallback() {
 
-        const cardName = this.getAttribute("name") || "Unknown name";
-        const title = this.getAttribute("projectTitle") || "Unknown title";
-        const type = this.getAttribute("projectType") || "Unknown type";
-        const association = this.getAttribute("projectAssociation") || "Unknown association";
-        const image = this.getAttribute("projectImage") || "";
+        const project = this.projectData;
 
+        let descriptionList = project.projectDescription
+            .map(line => `<li>${line}</li>`)
+            .join("");
+
+        let mediaList = project.projectMedia
+            .map(m => `<a href="${m.link}" ${m.target ? `target="${m.target}"` : ""}">${m.name}</a>`)
+            .join("");
+
+            
         this.innerHTML = `
-            <div class = "card" name = "${cardName}">
-                <h3> ${title} </h3>
+            <div class = "card" name = "${project.cardName}">
+                <h3> ${project.projectTitle} </h3>
                 <hr>
                 <div class = "project-intro">
                     <picture>
-                        <source srcset=${image}>
-                        <img src = ${image} alt="${title} image">
+                        <source srcset=${project.projectImage}>
+                        <img src = ${project.projectImage} alt="${project.projectTitle} image">
                     </picture>
                     <p>
-                        project type : ${type} <br>
-                        association : ${association} <br>
+                        project type : ${project.projectType} <br>
+                        association : ${project.projectAssociation} <br>
                     </p>
                 </div>
                 <b> Project Details: </b>
                 <ul> 
-                    <slot name="description"></slot>
+                    ${descriptionList}
                 </ul>
                 <b> Actions: </b>
                 <nav>
-                    <slot name="media"></slot>
+                    ${mediaList}
                 </nav>
             </div>
         `;
