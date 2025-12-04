@@ -9,22 +9,19 @@ let records = {};
 
 
 
-
-function createProjectCard(project) {
-
-    const card = document.createElement("project-card");
-    card.projectData = project;
-    return card;
-
-}
-
 function displayProjects(projects) {
 
     container.innerHTML = "";
-    projects.forEach(p => container.appendChild(createProjectCard(p)));
     
-}
+    for (let i = 0; i < projects.length; i++) {
 
+        const card = document.createElement("project-card");
+        card.projectData = projects[i];
+        container.appendChild(card);
+
+    };
+
+}
 
 
 

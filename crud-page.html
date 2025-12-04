@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset = "UTF-8">
+    <title> Michelle's Portfolio </title>
+    <link rel="stylesheet" href="crud-style-sheet.css">
+</head>
+<body>
+    <noscript>Enable JavaScript for full functionality.</noscript>
+
+    <header>
+        <h1> CRUD Page</h1>
+        <hr>
+    </header>
+    
+    <main>
+        <section id = "crudforms">
+            <h2> CRUD Form: </h2>
+            <form class = "form-container" id = "addproject">
+                <h3> Add a Project: </h3>
+                <form-field>
+                    <label for = "title"> Project Title: </label>
+                    <input type = "text" id = "title" name = "title" pattern="[A-Z][a-zA-Z ]*" minlength ="3" placeholder="title" required>
+                </form-field>
+                <form-field>
+                    <label for = "type"> Project Type: </label>
+                    <input type = "text" id = "type" name = "type" minlength ="3"  value="N/A" required>
+                </form-field>
+                <form-field>
+                    <label for = "association"> Project Association: </label>
+                    <input type = "text" id = "association" name = "association" minlength ="3"  value="N/A" required>
+                </form-field>
+                <form-field>
+                    <label for = "image"> Project Image URL: </label>
+                    <input type="text" id = "image" name = "image" placeholder="Enter your url" required>
+                </form-field>
+                <form-field>
+                    <label for="description">Description (max number of characters is 500):</label>
+                    <textarea id="description" name="description" maxlength="500" placeholder="Enter each point on a new line" required></textarea>
+                </form-field>
+
+                <form-field>
+                    <label for = "projectButtonsContainer"> Project Action Button(s): </label>
+                    <button-container id = "projectButtonsContainer">
+                        <button-inner-container>
+                        <input type="text" name="buttonNames" minlength ="3" placeholder="Button name" required>
+                        <input type="text" name="buttonLinks" placeholder="Enter your url" required>
+                        </button-inner-container>
+                    </button-container>
+                    <button-controls-container>
+                        <button type="button" id = "addButton" class = "page-button">+</button>
+                        <button type="button" id = "deleteButton" class = "page-button">-</button>
+                    </button-controls-container>
+                </form-field>
+
+                <button class = "form-submit-button" type="submit">Add Project</button>
+            </form>
+
+
+            <form class = "form-container" id = "deleteproject">
+                <h3> Remove a Project: </h3>
+                <form-field>
+                    <label for="project_dropdown_remove">Select a project to update:</label>
+                    <select id="project_dropdown_remove" name="project">
+                        <option value="">-- Select a project --</option>
+                    </select>
+                </form-field>
+                <button class = "form-submit-button" type="submit">Add Project</button>
+            </form>
+
+
+            <form class = "form-container" id = "updateproject">
+                <h3> Update a Project: </h3>
+                <form-field>
+                    <label for="project_dropdown_update">Select a project to update:</label>
+                    <select id="project_dropdown_update" name="updated_project">
+                        <option value="">-- Select a project --</option>
+                    </select>
+                </form-field>
+                <form-field>
+                    <label for = "updated_title"> Project Title: </label>
+                    <input type = "text" id = "updated_title" name = "updated_title" minlength="3" pattern="[A-Z][a-zA-Z ]*" placeholder="title" required>
+                </form-field>
+                <form-field>
+                    <label for = "updated_type"> Project Type: </label>
+                    <input type = "text" id = "updated_type" name = "updated_type" minlength="3" value="N/A" required>
+                </form-field>
+                <form-field>
+                    <label for = "updated_association"> Project Association: </label>
+                    <input type = "text" id = "updated_association" name = "updated_association" minlength="3"  value="N/A" required>
+                </form-field>
+                <form-field>
+                    <label for = "updated_image"> Project Image URL: </label>
+                    <input type="text" id = "updated_image" name = "updated_image" placeholder="Enter your url" required>
+                </form-field>
+                <form-field>
+                    <label for="updated_description">Description (max number of characters is 500):</label>
+                    <textarea id="updated_description" name="updated_description" maxlength="500" placeholder="Enter each point on a new line" required></textarea>
+                </form-field>
+                <form-field>
+                    <label for = "projectButtonsContainer"> Project Action Button: </label>
+                    <button-container id = "updated_projectButtonsContainer">
+                        <button-inner-container>
+                            <input type="text" name="updated_buttonNames" minlength="3"  placeholder="Button name" required>
+                            <input type="text" name="updated_buttonLinks" placeholder="Enter your url" required>
+                        </button-inner-container>
+                    </button-container>
+                    <button-controls-container>
+                        <button type="button" id = "updated_addButton" class = "page-button">+</button>
+                        <button type="button" id = "updated_deleteButton" class = "page-button">-</button>
+                    </button-controls-container>
+                </form-field>
+
+                <button class = "form-submit-button" type="submit">Update Project</button>
+            </form>
+
+
+        </section>
+        <section id = "projects">
+            <h2> Loaded Projects: </h2>
+            <card-button-container>
+                <button id="local" class = "page-button">Load Local</button>
+                <button id="remote" class = "page-button">Load Remote</button>
+            </card-button-container>
+            <card-container id = "project-container"> 
+                <project-card>
+                </project-card>
+            </card-container>
+        </section>
+    </main>
+    <footer> 
+        <p> Author: Michelle Wee</p>
+    </footer>
+    <script src="project-card.js"></script>
+    <script src="crud-page.js"></script>
+</body>
+</html>

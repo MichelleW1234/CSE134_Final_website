@@ -20,12 +20,18 @@
 html {
 
   background-color: light-dark(rgb(37, 0, 170), rgb(12, 0, 89));
+  /* Allow text to wrap */
+word-wrap: break-word;       /* legacy */
+overflow-wrap: break-word;   /* modern */
+white-space: normal;  
 
 }
 
 body {
 
   font-family: monospace, sans-serif;
+
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -36,7 +42,6 @@ body {
   border: 0.25rem solid rgb(225, 0, 255);
 
 }
-
 
 
 header {
@@ -55,6 +60,21 @@ main{
 
 }
 
+section {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-top: 3rem;
+  padding: 3rem;
+  gap: 2rem;
+
+  border: 0.25rem solid rgb(120, 206, 255);
+
+}
+
+
 hr {
 
   width: 85vw; 
@@ -66,19 +86,6 @@ hr {
 
 }
 
-section {
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  margin-top: 3rem;
-  padding: 3rem;
-  gap: 2rem;
-
-  border: 0.25rem solid rgb(170, 120, 255);
-
-}
 
 h1, h2, h3, b {
 
@@ -122,7 +129,6 @@ p, form{
 }
 
 
-
 a, button {
 
   font-family: monospace, sans-serif;
@@ -138,45 +144,6 @@ a:link, a:visited, a:hover, a:focus, a:active{
 
   color: inherit;
   text-decoration: none;
-
-}
-
-.body-hr {
-
-  display: none;
-
-}
-
-.nav-button-container {
-
-  display: flex; 
-  flex-wrap: wrap; 
-  gap: 3rem; 
-  padding: 2rem 3rem; 
-  
-  box-shadow: 0 0 1rem 0.5rem rgb(233, 92, 255);
-
-  a {
-
-    background-color: rgb(237, 190, 255);
-    border-top: 0.1rem solid black;
-    border-right: 0.1rem solid black;
-    border-left: 0.2rem solid black;
-    border-bottom: 0.2rem solid black;
-  
-    animation: glowing-button-nav 3s infinite;
-
-  }
-
-  a:hover {
-
-    color: white;
-    background-color: rgb(92, 0, 112);
-    box-shadow: 0 0 1rem 0.25rem rgb(221, 0, 255);
-
-    animation: glowing-button-nav-hover 3s infinite;
-
-  }
 
 }
 
@@ -202,18 +169,18 @@ a:link, a:visited, a:hover, a:focus, a:active{
 }
 
 
-card-carousel-button-container{
+card-button-container{
 
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
 
-  gap: 2rem;
+  gap: 3rem;
 
 }
 
-card-carousel-container{
+card-container{
   
   display: flex;
   flex-direction: column;
@@ -222,13 +189,14 @@ card-carousel-container{
 
   gap: 3rem;
 
-  project-card {
+  .card {
 
     width: 45vw;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    flex-wrap:wrap;
 
     padding: 2.5rem;
     border-radius: 2rem;
@@ -326,138 +294,35 @@ card-carousel-container{
 
   }
 
-  project-card.hidden {
-    display: none;
-  }
-
 } 
 
 
-.media-page-layout{
-
-  display: flex; 
-  flex-direction: column; 
-  align-items: center; 
-  justify-content: center;
-
-  gap: 2rem;
-
-  section {
-
-    border: none;
-
-    media-section{
-
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 3rem;
-
-      media-option{
-
-        width: 12rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-
-        gap: 2rem;
-        padding: 2rem;
-
-        box-shadow: 0 0 0.625rem 0.5rem rgb(0, 191, 255);
-
-        transition: transform 0.3s ease;
-
-      }
-
-      media-option:hover{
-
-        transform: scale(1.05);
-
-      }
-
-      .media-option-phone{
-
-        display: none;
-
-      }
-
-    }
-
-  }
-
-
-}
-
-.contact-container {
-
-  display: flex; 
-  flex-direction: row; 
-
-  img {
-
-    width: 8rem;
-    height: 8rem;
-
-    padding: 1rem;
-
-    background-color: rgb(215, 147, 255);
-    border-bottom: 0.3rem solid black;
-    border-left: 0.3rem solid black;
-    border-top: 0.1rem solid black;
-    border-right: 0.1rem solid black;
-
-    animation: glowing-button-nav 4s infinite;
-
-  }
-
-  img:hover {
-
-    background-color: rgb(193, 59, 255);
-
-  }
-
-}
-
 form {
 
+  width: 50vw;
   display: flex; 
   flex-direction: column; 
   align-items: center; 
   font-weight: bold;
 
-  gap: 2rem; 
+  gap: 3rem; 
   padding: 5rem; 
 
   box-shadow: 0 0 1rem 0.5rem rgb(221, 0, 255);
- 
-
-  fieldset {
-
-    width: 40vw;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-
-    border: center;
-    gap: 2rem;
-    padding: 2rem;
-
-    border: 0.1rem solid rgb(0, 204, 255);
-
-  }
 
   form-field {
 
+    width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    align-items: center;
+    gap: 1.5rem;
 
   }
 
   input{
 
+    width: 80%;
     font-family: monospace, sans-serif;
     padding: 0.5rem;
 
@@ -471,7 +336,7 @@ form {
 
   textarea{
 
-    width: 40vw; 
+    width: 85%; 
     height: 7rem; 
     align-self: center;
 
@@ -483,6 +348,34 @@ form {
     border-left: 0.2rem solid black;
     border-top: 0.1rem solid black;
     border-right: 0.1rem solid black;
+
+  }
+
+  button-container {
+
+    width: 100%; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    gap: 2rem;
+
+    button-inner-container {
+
+      width: 100%; 
+      display: flex; 
+      flex-direction: column; 
+      align-items: center; 
+      gap: 0.5rem;
+
+    }
+
+  }
+
+  button-controls-container {
+
+    display: flex; 
+    flex-direction: row; 
+    gap: 1.5rem;
 
   }
 
@@ -534,6 +427,7 @@ form {
     
   }
 
+
   .form-submit-button{
 
     color: var(--button-font-color);
@@ -576,21 +470,9 @@ form {
   
   }
 
-
   body {
 
     margin: 0rem;
-    border: none;
-
-  }
-
-
-  section {
-
-    margin-top: 1rem;
-    padding: 1.5rem;
-    gap: 2rem;
-
     border: none;
 
   }
@@ -601,30 +483,9 @@ form {
 
   }
 
-  .nav-button-container {
+  card-container{
 
-    flex-direction: column;
-    gap: 2rem; 
-
-    box-shadow: 0 0 1rem 0.4rem rgb(233, 92, 255);
-
-  }
-
-  .body-hr {
-
-    width: 85vw; 
-    height: 0.2rem; 
-    display: block;
-
-    border: none;
-
-    background-color: rgb(0, 229, 255);
-
-  }
-
-  card-carousel-container{
-
-    project-card {
+    .card {
 
       width: 80vw;
       padding: 2rem;
@@ -651,53 +512,6 @@ form {
         gap: 0.5rem;
 
       }
-
-    }
-
-  }
-
-  .media-page-layout{
-
-    section {
-
-      border: none;
-
-      media-section{
-
-        media-option{
-
-          width: 10rem;
-
-          box-shadow: 0 0 0.625rem 0.5rem rgb(0, 191, 255);
-
-          transition: none;
-
-        }
-
-        media-option:hover{
-
-          transform: none;
-
-        }
-
-        .media-option-phone{
-
-          display: none;
-
-        }
-
-      }
-
-    }
-
-  }
-
-  .contact-container {
-
-    img {
-
-      width: 7rem;
-      height: 7rem;
 
     }
 
@@ -738,57 +552,6 @@ form {
 
     --button-padding-width: clamp(0.6rem, 0.8rem, 1rem);
     --button-padding-height: clamp(0.4rem, 0.6rem, 0.8rem);
-  }
-
-  .media-page-layout{
-
-    section {
-
-      border: none;
-
-      media-section{
-
-        media-option{
-
-          display: none;
-        }
-
-        .media-option-phone{
-
-          width: 10rem;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-
-          padding: 1rem;
-          gap: 2rem;
-
-          box-shadow: 0 0 0.625rem 0.5rem rgb(0, 191, 255);
-
-        }
-
-        .media-option-phone:hover{
-
-          box-shadow: 0 0 0.625rem 0.5rem rgb(151, 46, 255);
-
-        }
-
-      }
-
-    }
-
-  }
-
-  .contact-container {
-
-    img {
-
-      width: 7rem;
-      height: 7rem;
-
-    }
-
   }
 
   form{

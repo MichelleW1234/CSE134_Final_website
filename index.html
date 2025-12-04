@@ -16,6 +16,7 @@
             <a href="#About-Me"> About Me</a>
             <a href="#Projects"> Projects Section</a>
             <a href="#Contacts"> Let's Connect! </a>
+            <a class = "page-button" href="crud-page.html"> Go to CRUD Page </a>
         </nav> 
     </header>
     
@@ -40,14 +41,116 @@
 
         <section id="Projects">
             <h2> Projects Section: </h2>
-
-            <card-button-container>
-                <button id="local" class = "page-button">Load Local</button>
-                <button id="remote" class = "page-button">Load Remote</button>
-            </card-button-container>
-            <card-carousel-container id = "project-container"> 
+            <card-carousel-button-container>
+                <button id = "backwards-button" class = "page-button"> &lt; </button>
+                <button id = "forwards-button" class = "page-button"> &gt; </button>
+            </card-carousel-button-container>
+            <card-carousel-container>
+                <project-card name = "arcade">
+                    <h3> Arcade </h3>
+                    <hr>
+                    <div class = "project-intro">
+                        <picture>
+                            <source srcset="./assets/arcade.svg">
+                            <img src ="./assets/arcade.svg" alt="Arcade image">
+                        </picture>
+                        <p>
+                            project type : Personal <br>
+                            association : N/A <br>
+                        </p>
+                    </div>
+                    <b> Project Details: </b>
+                    <ul> 
+                        <li>Developed an interactive macOs retro-style game with web tech (React (JavaScript), HTML, CSS, Electron)</li>
+                        <li>Controlled animation flow by syncing React component states with gameplay logic, triggering re-renders and animating game elements in response to user actions</li>
+                        <li>Designed an engaging user interface with hand-drawn visual assets, CSS animations, background music, and sound effects to enhance the player experience</li>
+                        <li>Implemented game logic and dynamic outcomes based on user input, with real-time feedback</li>
+                        <li>Enabled keyboard navigation within the game interface by mapping key events to UI actions</li>
+                        <li>Implemented persistent data storage using Electron Store to save and restore user progress across app sessions</li>
+                    </ul>
+                    <b> Actions: </b>
+                    <nav>
+                        <a href="https://github.com/MichelleW1234/Arcade" target="_blank">Visit Github Repo</a>
+                        <a href="https://github.com/MichelleW1234/Arcade/releases" target="_blank">Go to Releases</a>
+                        <a href="project-one-media.html">Go to media section</a>
+                    </nav>
+                </project-card>
+                <project-card name = "tritonturnup">
+                    <h3> TritonTurnUp </h3>
+                    <hr>
+                    <div class = "project-intro">
+                        <picture>
+                            <source srcset="./assets/tritonturnup.svg">
+                            <img src ="./assets/tritonturnup.svg" alt="TritonTurnUp image">
+                        </picture>
+                        <p>
+                            project type : Academic <br>
+                            association : UCSD <br>
+                        </p>
+                    </div>
+                    <b> Project Details: </b>
+                    <ul> 
+                        <li>A webapp that allows UCSD students to browse a detailed list of upcoming and ongoing events affiliated with the school. Upon logging in, students can add these events to their calendars based on their schedule availability, promoting socialization and stress relief by raising awareness of fun and engaging events within the Triton community.</li>
+                        <li>Contributed to UI/UX and front-end in an Agile team using GitHub</li>
+                        <li>Conducted user research and testing to improve engagement</li>
+                        <li>Mentored by professor with extensive software development experience</li>
+                    </ul>
+                    <b> Actions: </b>
+                    <nav>
+                        <a href="https://github.com/MichelleW1234/CSE-110-Project" target="_blank">Visit Github Repo</a>
+                        <a href="project-two-media.html">Go to media section</a>
+                    </nav>
+                </project-card>
+                <project-card name = "snowAgent">
+                    <h3> Snow Agent Advertisement </h3>
+                    <hr>
+                    <div class = "project-intro">
+                        <picture>
+                            <source srcset="./assets/snowagent.svg">
+                            <img src ="./assets/snowagent.svg" alt="Snow Agent Advertisement image">
+                        </picture>
+                        <p>
+                            project type : Internship <br>
+                            association : Decode AI <br>
+                        </p>
+                    </div>
+                    <b> Project Details: </b>
+                    <ul> 
+                        <li>Assisted in prompt engineering to generate photo and video assets for client advertising campaigns</li>
+                        <li>Used AI software such as Midjourney and Kling to generate photos and videos</li>
+                        <li>Wrote detailed image prompts from basic descriptions</li>
+                    </ul>
+                    <b> Actions: </b>
+                    <nav>
+                        <a href="project-three-media.html">Go to media section</a>
+                    </nav>
+                </project-card>
+                <project-card name = "scripta">
+                    <h3> Scripta </h3>
+                    <hr>
+                    <div class = "project-intro">
+                        <picture>
+                            <source srcset="./assets/Scripta.svg">
+                            <img src ="./assets/Scripta.svg" alt="Scripta image">
+                        </picture>
+                        <p>
+                            project type : Personal <br>
+                            association : N/A <br>
+                        </p>
+                    </div>
+                    <b> Project Details: </b>
+                    <ul> 
+                        <li>Developed a React-based word processor that enables users to customize documents with dynamic features such as changing background color, font, font color, and title styling</li>
+                        <li>Implemented document management functionality, allowing users to save, delete (move to trash), and search for documents efficiently/li>
+                        <li>Built the application using React, JavaScript, and CSS, ensuring an interactive, responsive, and visually appealing user interface</li>
+                    </ul>
+                    <b> Actions: </b>
+                    <nav>
+                        <a href="https://github.com/MichelleW1234/Scripta" target="_blank">Visit Github Repo</a>
+                        <a href="project-four-media.html">Go to media section</a>
+                    </nav>
+                </project-card>
             </card-carousel-container>
-
         </section>
 
         <hr class="body-hr">
@@ -82,13 +185,9 @@
         <hr class="body-hr">
     </main>
 
-    <script src="project-card.js"></script>
-    <script src="load-data.js"></script>
-
     <footer> 
         <p> Author: Michelle Wee</p>
     </footer>
-    <script>
-    </script>
+    <script src="card-carousel-func.js"></script>
 </body>
 </html>

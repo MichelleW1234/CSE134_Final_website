@@ -7,6 +7,10 @@ class ProjectCard extends HTMLElement {
     connectedCallback() {
 
         const project = this.projectData;
+        if (!project || !project.projectDescription) {
+            this.innerHTML = "";
+            return;
+        }
 
         let descriptionList = project.projectDescription
             .map(line => `<li>${line}</li>`)

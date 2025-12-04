@@ -44,7 +44,7 @@
         "projectImage": "./assets/snowagent.svg",
         "projectDescription": [
             "Assisted in prompt engineering to generate photo and video assets for client advertising campaigns",
-            "Used AI software such as Midjourney and Kling to generate photos and videos.",
+            "Used AI software such as Midjourney and Kling to generate photos and videos",
             "Wrote detailed image prompts from basic descriptions"
         ],
         "projectMedia": [
@@ -58,9 +58,9 @@
         "projectAssociation": "N/A",
         "projectImage": "./assets/Scripta.svg",
         "projectDescription": [
-            "Developed a React-based word processor that enables users to customize documents with dynamic features such as changing background color, font, font color, and title styling.",
-            "Implemented document management functionality, allowing users to save, delete (move to trash), and search for documents efficiently.",
-            "Built the application using React, JavaScript, and CSS, ensuring an interactive, responsive, and visually appealing user interface."
+            "Developed a React-based word processor that enables users to customize documents with dynamic features such as changing background color, font, font color, and title styling",
+            "Implemented document management functionality, allowing users to save, delete (move to trash), and search for documents efficiently",
+            "Built the application using React, JavaScript, and CSS, ensuring an interactive, responsive, and visually appealing user interface"
         ],
         "projectMedia": [
             { "name": "Visit Github Repo", "link": "https://github.com/MichelleW1234/Scripta", "target": "_blank"},
