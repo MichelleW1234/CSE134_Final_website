@@ -11,13 +11,19 @@
     <header>
         <h1> CRUD Page</h1>
         <hr>
+        <h2> Jump down to: </h2>
+        <nav class = "nav-button-container">
+            <a href="#crudformadd"> Add a Project</a>
+            <a href="#crudformdelete"> Remove a Project</a>
+            <a href="#crudformupdate"> Update a Project </a>
+            <a href="#projects"> Load Project cards </a>
+        </nav> 
     </header>
     
     <main>
-        <section id = "crudforms">
-            <h2> CRUD Form: </h2>
+        <section id = "crudformadd">
             <form class = "form-container" id = "addproject">
-                <h3> Add a Project: </h3>
+                <h2> Add a Project: </h2>
                 <form-field>
                     <label for = "title"> Project Title: </label>
                     <input type = "text" id = "title" name = "title" pattern="[A-Z][a-zA-Z ]*" minlength ="3" placeholder="title" required>
@@ -55,22 +61,24 @@
 
                 <button class = "form-submit-button" type="submit">Add Project</button>
             </form>
+        </section>
 
-
+        <section id = "crudformdelete">
             <form class = "form-container" id = "deleteproject">
-                <h3> Remove a Project: </h3>
+                <h2> Remove a Project: </h2>
                 <form-field>
-                    <label for="project_dropdown_remove">Select a project to update:</label>
+                    <label for="project_dropdown_remove">Select a project to remove:</label>
                     <select id="project_dropdown_remove" name="project">
                         <option value="">-- Select a project --</option>
                     </select>
                 </form-field>
-                <button class = "form-submit-button" type="submit">Add Project</button>
+                <button class = "form-submit-button" type="submit">Remove Project</button>
             </form>
+        </section>
 
-
+        <section id = "crudformupdate">
             <form class = "form-container" id = "updateproject">
-                <h3> Update a Project: </h3>
+                <h2> Update a Project: </h2>
                 <form-field>
                     <label for="project_dropdown_update">Select a project to update:</label>
                     <select id="project_dropdown_update" name="updated_project">
@@ -110,12 +118,10 @@
                         <button type="button" id = "updated_deleteButton" class = "page-button">-</button>
                     </button-controls-container>
                 </form-field>
-
                 <button class = "form-submit-button" type="submit">Update Project</button>
             </form>
-
-
         </section>
+
         <section id = "projects">
             <h2> Loaded Projects: </h2>
             <card-button-container>

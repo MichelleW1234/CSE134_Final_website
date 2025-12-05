@@ -20,10 +20,19 @@
 html {
 
   background-color: light-dark(rgb(37, 0, 170), rgb(12, 0, 89));
-  /* Allow text to wrap */
-word-wrap: break-word;       /* legacy */
-overflow-wrap: break-word;   /* modern */
-white-space: normal;  
+
+
+
+
+
+  word-wrap: break-word; 
+  overflow-wrap: break-word;
+  white-space: normal;  
+
+
+
+
+
 
 }
 
@@ -56,6 +65,8 @@ header {
 
 main{
 
+  display: flex;
+  flex-direction: column;
   padding: 3rem;
 
 }
@@ -68,7 +79,7 @@ section {
 
   margin-top: 3rem;
   padding: 3rem;
-  gap: 2rem;
+  gap: 5rem;
 
   border: 0.25rem solid rgb(120, 206, 255);
 
@@ -109,14 +120,6 @@ h2 {
   
 }
 
-h3 {
-
-  color: rgb(193, 202, 255);
-  font-size: calc(var(--default-font-size)*1.5);
-  animation: glowing-text-h3 3s infinite;
-
-}
-
 
 p, form, input, textarea {
 
@@ -146,6 +149,41 @@ a:link, a:visited, a:hover, a:focus, a:active{
   text-decoration: none;
 
 }
+
+
+.nav-button-container {
+
+  display: flex; 
+  flex-wrap: wrap; 
+  gap: 3rem; 
+  padding: 2rem 3rem; 
+  
+  box-shadow: 0 0 1rem 0.5rem rgb(233, 92, 255);
+
+  a {
+
+    background-color: rgb(237, 190, 255);
+    border-top: 0.1rem solid black;
+    border-right: 0.1rem solid black;
+    border-left: 0.2rem solid black;
+    border-bottom: 0.2rem solid black;
+  
+    animation: glowing-button-nav 3s infinite;
+
+  }
+
+  a:hover {
+
+    color: white;
+    background-color: rgb(92, 0, 112);
+    box-shadow: 0 0 1rem 0.25rem rgb(221, 0, 255);
+
+    animation: glowing-button-nav-hover 3s infinite;
+
+  }
+
+}
+
 
 
 .page-button {
@@ -480,6 +518,15 @@ form {
   a, button {
 
     border-radius: 0.4rem;
+
+  }
+
+  .nav-button-container {
+
+    flex-direction: column;
+    gap: 2rem; 
+
+    box-shadow: 0 0 1rem 0.4rem rgb(233, 92, 255);
 
   }
 

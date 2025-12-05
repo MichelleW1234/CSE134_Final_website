@@ -53,7 +53,7 @@ function creatingProject(projects, form, formString, projectKey){
 
             name: b.name,
             link: b.url,
-            target: b.target === null ? null : "_blank"
+            target: b.target === undefined ? null : "_blank"
 
         }))
 
@@ -64,10 +64,7 @@ function creatingProject(projects, form, formString, projectKey){
 
 }
 
-function updateDropdown(projects){
-
-    const dropDownUpdate = document.getElementById("project_dropdown_update");
-    const dropDownDelete = document.getElementById("project_dropdown_remove");
+function updateDropdown(projects, dropDownUpdate, dropDownDelete){
 
     dropDownUpdate.innerHTML = `
         <option value="">-- Select a project --</option>
@@ -112,6 +109,9 @@ function deletingButton(buttonContainerId){
 }
 
 
+
+
+
 window.addEventListener('DOMContentLoaded', async () => {
 
     // Multiple forms: 
@@ -134,6 +134,10 @@ window.addEventListener('DOMContentLoaded', async () => {
         dropDownDelete.appendChild(optionDelete);
 
     });
+
+
+
+
 
 
     // Adding form: 
@@ -160,13 +164,47 @@ window.addEventListener('DOMContentLoaded', async () => {
         const newProjectKey = "project" + (Object.keys(projects).length + 1);
         creatingProject(projects, e.target, "", newProjectKey);
 
-        updateDropdown(projects);
+        updateDropdown(projects, dropDownUpdate, dropDownDelete);
         e.target.reset();
         
         buttonsContainer.innerHTML = ``;
         addingButton(buttonsContainer, "");
 
     });
+
+
+
+
+
+
+    // Delete form:
+
+    const removeForm = document.getElementById("deleteproject");
+
+    removeForm.addEventListener("submit", (e) => {
+
+        e.preventDefault();
+
+        const selectedId = dropDownDelete.value;
+        
+        if (!selectedId){
+            
+            return;
+
+        }
+
+        delete projects[selectedId];
+        localStorage.setItem("projects", JSON.stringify(projects));
+
+        updateDropdown(projects, dropDownUpdate, dropDownDelete);
+
+        e.target.reset();
+
+    });
+
+
+
+
 
 
     // Update form:
@@ -236,7 +274,7 @@ window.addEventListener('DOMContentLoaded', async () => {
 
         creatingProject(projects, e.target, "updated_", selectedId);
 
-        updateDropdown(projects);
+        updateDropdown(projects, dropDownUpdate, dropDownDelete);
 
         e.target.reset();
 
@@ -244,6 +282,10 @@ window.addEventListener('DOMContentLoaded', async () => {
         addingButton(updatedButtonsContainer, "updated_");
 
     });
+
+
+
+
 
 
 
