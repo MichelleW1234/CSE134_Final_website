@@ -110,19 +110,6 @@ window.addEventListener('DOMContentLoaded', async () => {
     const container = document.getElementById("project-container");
     const url = "https://api.jsonbin.io/v3/b/692eb290ae596e708f7e2ed4";
 
-    try {
-
-        const response = await fetch(url);
-        const data = await response.json();
-        records = data.record;
-        localStorage.setItem("projects", JSON.stringify(records));
-
-    } catch (err) {
-
-        console.error("Failed to fetch remote projects.");
-
-    }
-
     projects = JSON.parse(localStorage.getItem("projects")) || {};
 
     const dropDownUpdate = document.getElementById("project_dropdown_update");
@@ -329,7 +316,6 @@ window.addEventListener('DOMContentLoaded', async () => {
 
         try {
 
-            /*const data = JSON.parse(localStorage.getItem("projects"));*/
             const projectsArray = Object.values(projects);
             displayProjects(container, projectsArray);
 
