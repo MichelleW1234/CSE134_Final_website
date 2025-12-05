@@ -14,9 +14,9 @@
             "Implemented persistent data storage using Electron Store to save and restore user progress across app sessions"
         ],
         "projectMedia": [
-            { "name": "Visit Github Repo", "link": "https://github.com/MichelleW1234/Arcade", "target": "_blank" },
-            { "name": "Go to Releases", "link": "https://github.com/MichelleW1234/Arcade/releases", "target": "_blank" },
-            { "name": "Go to media section", "link": "project-one-media.html", "target": null}
+            { "name": "Visit Github Repo", "link": "https://github.com/MichelleW1234/Arcade"},
+            { "name": "Go to Releases", "link": "https://github.com/MichelleW1234/Arcade/releases"},
+            { "name": "Go to media section", "link": "project-one-media.html"}
         ]
     },
     "projectTwo": {
@@ -32,8 +32,8 @@
             "Mentored by professor with extensive software development experience"
         ],
         "projectMedia": [
-            { "name": "Visit Github Repo", "link":  "https://github.com/MichelleW1234/CSE-110-Project", "target": "_blank"},
-            { "name": "Go to media section", "link": "project-two-media.html", "target": null}
+            { "name": "Visit Github Repo", "link":  "https://github.com/MichelleW1234/CSE-110-Project"},
+            { "name": "Go to media section", "link": "project-two-media.html"}
         ]
     },
     "projectThree":{
@@ -48,7 +48,7 @@
             "Wrote detailed image prompts from basic descriptions"
         ],
         "projectMedia": [
-            { "name": "Go to media section", "link": "project-three-media.html", "target": null}
+            { "name": "Go to media section", "link": "project-three-media.html"}
         ]
     },
     "projectFour": {
@@ -63,8 +63,8 @@
             "Built the application using React, JavaScript, and CSS, ensuring an interactive, responsive, and visually appealing user interface"
         ],
         "projectMedia": [
-            { "name": "Visit Github Repo", "link": "https://github.com/MichelleW1234/Scripta", "target": "_blank"},
-            { "name": "Go to media section", "link": "project-four-media.html", "target": null}
+            { "name": "Visit Github Repo", "link": "https://github.com/MichelleW1234/Scripta"},
+            { "name": "Go to media section", "link": "project-four-media.html"}
         ]
     }
 }

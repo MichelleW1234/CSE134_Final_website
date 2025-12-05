@@ -17,7 +17,7 @@ class ProjectCard extends HTMLElement {
             .join("");
 
         let mediaList = project.projectMedia
-            .map(m => `<a href="${m.link}" ${m.target ? `target="${m.target}"` : ""}">${m.name}</a>`)
+            .map(m => `<a href="${m.link}" target="_blank">${m.name}</a>`)
             .join("");
 
             

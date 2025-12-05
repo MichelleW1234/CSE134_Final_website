@@ -27,22 +27,34 @@
                 <form-field>
                     <label for = "title"> Project Title: </label>
                     <input type = "text" id = "title" name = "title" pattern="[A-Z][a-zA-Z ]*" minlength ="3" placeholder="title" required>
+                    <output>
+                        Field must start with a capital letter and only use alphabetical letters. Minimum length is 3.
+                    </output>
                 </form-field>
                 <form-field>
                     <label for = "type"> Project Type: </label>
                     <input type = "text" id = "type" name = "type" minlength ="3"  value="N/A" required>
+                    <output>
+                        Minimum length is 3. Default is N/A.
+                    </output>
                 </form-field>
                 <form-field>
                     <label for = "association"> Project Association: </label>
                     <input type = "text" id = "association" name = "association" minlength ="3"  value="N/A" required>
+                    <output>
+                        Minimum length is 3. Default is N/A.
+                    </output>
                 </form-field>
                 <form-field>
                     <label for = "image"> Project Image URL: </label>
                     <input type="text" id = "image" name = "image" placeholder="Enter your url" required>
                 </form-field>
                 <form-field>
-                    <label for="description">Description (max number of characters is 500):</label>
-                    <textarea id="description" name="description" maxlength="500" placeholder="Enter each point on a new line" required></textarea>
+                    <label for="description">Description:</label>
+                    <textarea id="description" name="description" maxlength="500" required></textarea>
+                    <output>
+                        Maximum number of characters is 500. Enter each bullet point on a new line. 
+                    </output>
                 </form-field>
 
                 <form-field>
@@ -88,22 +100,34 @@
                 <form-field>
                     <label for = "updated_title"> Project Title: </label>
                     <input type = "text" id = "updated_title" name = "updated_title" minlength="3" pattern="[A-Z][a-zA-Z ]*" placeholder="title" required>
+                    <output>
+                        Field must start with a capital letter and only use alphabetical letters. Minimum length is 3.
+                    </output>
                 </form-field>
                 <form-field>
                     <label for = "updated_type"> Project Type: </label>
                     <input type = "text" id = "updated_type" name = "updated_type" minlength="3" value="N/A" required>
+                    <output>
+                        Minimum length is 3. Default is N/A.
+                    </output>
                 </form-field>
                 <form-field>
                     <label for = "updated_association"> Project Association: </label>
                     <input type = "text" id = "updated_association" name = "updated_association" minlength="3"  value="N/A" required>
+                    <output>
+                        Minimum length is 3. Default is N/A.
+                    </output>
                 </form-field>
                 <form-field>
                     <label for = "updated_image"> Project Image URL: </label>
                     <input type="text" id = "updated_image" name = "updated_image" placeholder="Enter your url" required>
                 </form-field>
                 <form-field>
-                    <label for="updated_description">Description (max number of characters is 500):</label>
+                    <label for="updated_description">Description:</label>
                     <textarea id="updated_description" name="updated_description" maxlength="500" placeholder="Enter each point on a new line" required></textarea>
+                    <output>
+                        Maximum number of characters is 500. Enter each bullet point on a new line. 
+                    </output>
                 </form-field>
                 <form-field>
                     <label for = "projectButtonsContainer"> Project Action Button: </label>
@@ -129,8 +153,6 @@
                 <button id="remote" class = "page-button">Load Remote</button>
             </card-button-container>
             <card-container id = "project-container"> 
-                <project-card>
-                </project-card>
             </card-container>
         </section>
     </main>

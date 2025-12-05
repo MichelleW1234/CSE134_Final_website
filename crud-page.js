@@ -1,15 +1,7 @@
-const container = document.getElementById("project-container");
-const url = "https://api.jsonbin.io/v3/b/692eb290ae596e708f7e2ed4";
-fetch(url)
-    .then(res => res.json())
-    .then(data => {
-        localStorage.setItem("projects", JSON.stringify(data.record));
-    });
 let records = {};
+let projects = {};
 
-
-
-function displayProjects(projects) {
+function displayProjects(container, projects) {
 
     container.innerHTML = "";
     
@@ -52,8 +44,7 @@ function creatingProject(projects, form, formString, projectKey){
         projectMedia: buttons.map(b => ({
 
             name: b.name,
-            link: b.url,
-            target: b.target === undefined ? null : "_blank"
+            link: b.url
 
         }))
 
@@ -116,7 +107,23 @@ window.addEventListener('DOMContentLoaded', async () => {
 
     // Multiple forms: 
 
-    const projects = JSON.parse(localStorage.getItem("projects")) || {};
+    const container = document.getElementById("project-container");
+    const url = "https://api.jsonbin.io/v3/b/692eb290ae596e708f7e2ed4";
+
+    try {
+
+        const response = await fetch(url);
+        const data = await response.json();
+        records = data.record;
+        localStorage.setItem("projects", JSON.stringify(records));
+
+    } catch (err) {
+
+        console.error("Failed to fetch remote projects.");
+
+    }
+
+    projects = JSON.parse(localStorage.getItem("projects")) || {};
 
     const dropDownUpdate = document.getElementById("project_dropdown_update");
     const dropDownDelete = document.getElementById("project_dropdown_remove");
@@ -308,7 +315,7 @@ window.addEventListener('DOMContentLoaded', async () => {
             const data = await response.json();
             records = data.record;
             const projectsArray = Object.values(data.record || data);
-            displayProjects(projectsArray);
+            displayProjects(container, projectsArray);
 
         } catch (err) {
 
@@ -322,9 +329,9 @@ window.addEventListener('DOMContentLoaded', async () => {
 
         try {
 
-            const data = JSON.parse(localStorage.getItem("projects"));
-            const projectsArray = Object.values(data);
-            displayProjects(projectsArray);
+            /*const data = JSON.parse(localStorage.getItem("projects"));*/
+            const projectsArray = Object.values(projects);
+            displayProjects(container, projectsArray);
 
         } catch (err){
 
