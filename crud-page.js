@@ -161,7 +161,7 @@ window.addEventListener('DOMContentLoaded', async () => {
 
         e.preventDefault();
 
-        const newProjectKey = "project" + (Object.keys(projects).length + 1);
+        const newProjectKey = crypto.randomUUID();
         creatingProject(projects, e.target, "", newProjectKey);
 
         updateDropdown(projects, dropDownUpdate, dropDownDelete);
@@ -258,7 +258,6 @@ window.addEventListener('DOMContentLoaded', async () => {
         });
 
     });
-
 
     updateForm.addEventListener("submit", (e) => {
 
