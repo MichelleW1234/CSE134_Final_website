@@ -1,21 +1,21 @@
 let records = {};
 let projects = {};
 
-function displayProjects(container, projects) {
+function displayProjects(container, projectsArray) {
 
     container.innerHTML = "";
     
-    for (let i = 0; i < projects.length; i++) {
+    for (let i = 0; i < projectsArray.length; i++) {
 
         const card = document.createElement("project-card");
-        card.projectData = projects[i];
+        card.projectData = projectsArray[i];
         container.appendChild(card);
 
     };
 
 }
 
-function creatingProject(projects, form, formString, projectKey){
+function creatingProject(form, formString, projectKey){
 
     const title = form.querySelector(`[name="${formString}title"]`).value.trim();
     const type = form.querySelector(`[name="${formString}type"]`).value.trim();
@@ -55,7 +55,7 @@ function creatingProject(projects, form, formString, projectKey){
 
 }
 
-function updateDropdown(projects, dropDownUpdate, dropDownDelete){
+function updateDropdown(dropDownUpdate, dropDownDelete){
 
     dropDownUpdate.innerHTML = `
         <option value="">-- Select a project --</option>
@@ -102,7 +102,6 @@ function deletingButton(buttonContainerId){
 
 
 
-
 window.addEventListener('DOMContentLoaded', async () => {
 
     // Multiple forms: 
@@ -110,7 +109,25 @@ window.addEventListener('DOMContentLoaded', async () => {
     const container = document.getElementById("project-container");
     const url = "https://api.jsonbin.io/v3/b/692eb290ae596e708f7e2ed4";
 
-    projects = JSON.parse(localStorage.getItem("projects")) || {};
+
+    projects = JSON.parse(localStorage.getItem("projects"));
+
+    if (!projects){
+
+        const response = await fetch(url);
+
+        if (!response.ok) {
+
+            throw new Error(`Response status: ${response.status}`);
+
+        }
+
+        const data = await response.json();
+        projects = data.record;
+        localStorage.setItem("projects", JSON.stringify(projects));
+
+    }
+
 
     const dropDownUpdate = document.getElementById("project_dropdown_update");
     const dropDownDelete = document.getElementById("project_dropdown_remove");
@@ -156,9 +173,9 @@ window.addEventListener('DOMContentLoaded', async () => {
         e.preventDefault();
 
         const newProjectKey = crypto.randomUUID();
-        creatingProject(projects, e.target, "", newProjectKey);
+        creatingProject(e.target, "", newProjectKey);
 
-        updateDropdown(projects, dropDownUpdate, dropDownDelete);
+        updateDropdown(dropDownUpdate, dropDownDelete);
         e.target.reset();
         
         buttonsContainer.innerHTML = ``;
@@ -190,7 +207,7 @@ window.addEventListener('DOMContentLoaded', async () => {
         delete projects[selectedId];
         localStorage.setItem("projects", JSON.stringify(projects));
 
-        updateDropdown(projects, dropDownUpdate, dropDownDelete);
+        updateDropdown(dropDownUpdate, dropDownDelete);
 
         e.target.reset();
 
@@ -265,9 +282,9 @@ window.addEventListener('DOMContentLoaded', async () => {
 
         }
 
-        creatingProject(projects, e.target, "updated_", selectedId);
+        creatingProject(e.target, "updated_", selectedId);
 
-        updateDropdown(projects, dropDownUpdate, dropDownDelete);
+        updateDropdown(dropDownUpdate, dropDownDelete);
 
         e.target.reset();
 
@@ -301,7 +318,7 @@ window.addEventListener('DOMContentLoaded', async () => {
 
             const data = await response.json();
             records = data.record;
-            const projectsArray = Object.values(data.record || data);
+            const projectsArray = Object.values(records);
             displayProjects(container, projectsArray);
 
         } catch (err) {
