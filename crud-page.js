@@ -109,12 +109,11 @@ window.addEventListener('DOMContentLoaded', async () => {
     const container = document.getElementById("project-container");
     const url = "https://api.jsonbin.io/v3/b/692eb290ae596e708f7e2ed4";
 
-
     projects = JSON.parse(localStorage.getItem("projects"));
 
     if (!projects){
 
-        const response = await fetch(url);
+        const response = await fetch("project-cards.json");
 
         if (!response.ok) {
 
@@ -122,8 +121,7 @@ window.addEventListener('DOMContentLoaded', async () => {
 
         }
 
-        const data = await response.json();
-        projects = data.record;
+        projects = await response.json();
         localStorage.setItem("projects", JSON.stringify(projects));
 
     }
