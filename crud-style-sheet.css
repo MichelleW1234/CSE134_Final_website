@@ -109,7 +109,7 @@ h2 {
 }
 
 
-p, form, input, textarea {
+section, output, p, form, input, textarea {
 
   font-size: var(--default-font-size);
 
