@@ -55,7 +55,12 @@ header {
 
 main{
 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 3rem;
+
+  gap: 2rem;
 
 }
 
@@ -76,7 +81,6 @@ section {
   flex-direction: column;
   align-items: center;
 
-  margin-top: 3rem;
   padding: 3rem;
   gap: 2rem;
 
@@ -115,7 +119,7 @@ h3 {
 }
 
 
-b, p, form, input, textarea {
+b, p, input, textarea, label, legend {
 
   font-size: var(--default-font-size);
 
@@ -436,14 +440,12 @@ form {
   padding: 5rem; 
 
   box-shadow: 0 0 1rem 0.5rem rgb(221, 0, 255);
- 
 
   fieldset {
 
     width: 100%;
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
 
     border: center;
     gap: 2rem;
@@ -453,8 +455,19 @@ form {
 
   }
 
+  form-field {
+
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+
+  }
+
   input{
 
+    width: 100%;
     font-family: monospace, sans-serif;
     padding: 0.5rem;
 
@@ -494,6 +507,14 @@ form {
 
     border: 0.15rem dashed red;
     background-color: rgb(255, 209, 209);    
+
+  }
+
+  output {
+
+    font-weight: normal;
+    font-size: calc(var(--default-font-size)*0.8);
+    color:rgb(215, 186, 253);
 
   }
 
@@ -832,6 +853,14 @@ form {
 
     }
 
+    form-field {
+
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+
+    }
+
     fieldset {
 
       padding: 3rem;
@@ -849,6 +878,12 @@ form {
       height: 10rem; 
 
       padding: 1rem;
+    }
+
+    output {
+  
+      font-size: var(--default-font-size);
+
     }
 
   }
@@ -909,6 +944,14 @@ form {
 
     box-shadow: 0 0 0.5rem 0.25rem rgb(163, 65, 255);
     
+    form-field {
+
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+
+    }
+
     fieldset {
 
       padding: 3rem;

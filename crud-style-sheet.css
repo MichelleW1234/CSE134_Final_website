@@ -109,7 +109,7 @@ h2 {
 }
 
 
-section, output, p, form, input, textarea {
+p, input, textarea, label, select {
 
   font-size: var(--default-font-size);
 
@@ -615,6 +615,12 @@ form {
       
     }
 
+    output {
+  
+      font-size: var(--default-font-size);
+
+    }
+
     .form-submit-button{
 
       border-radius: 0.4rem;
@@ -634,6 +640,7 @@ form {
       padding: 1rem;
 
     }
+
 
     textarea{
 

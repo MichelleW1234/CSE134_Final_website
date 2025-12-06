@@ -172,15 +172,35 @@
             <form class = "form-container" action="https://formspree.io/f/mblzqpnw" method = "POST">
                 <fieldset class = "form-info-container">
                     <legend> Personal Information: </legend>
-                    <label for = "first_name"> First Name: </label>
-                    <input type = "text" id = "first_name" name = "first_name" pattern="[A-Z][a-zA-Z]+" placeholder="first name" required>
-                    <label for = "last_name"> Last Name: </label>
-                    <input type = "text" id = "last_name" name = "last_name" pattern="[A-Z][a-zA-Z]+" placeholder="last name" required>
-                    <label for = "email_address"> Email Address: </label>
-                    <input type = "email" id = "email_address" name = "email_address" placeholder="name@example.com" required>
+                    <form-field>
+                        <label for = "first_name"> First Name: </label>
+                        <input type = "text" id = "first_name" name = "first_name" minlength ="3" pattern="[A-Z][a-zA-Z]+" placeholder="first name" required>
+                        <output>
+                            Field must start with a capital letter and only use alphabetical letters. Minimum length is 3.
+                        </output>
+                    </form-field>
+                    <form-field>
+                        <label for = "last_name"> Last Name: </label>
+                        <input type = "text" id = "last_name" name = "last_name" minlength ="3" pattern="[A-Z][a-zA-Z]+" placeholder="last name" required>
+                        <output>
+                            Field must start with a capital letter and only use alphabetical letters. Minimum length is 3.
+                        </output>
+                    </form-field>
+                    <form-field>
+                        <label for = "email_address"> Email Address: </label>
+                        <input type = "email" id = "email_address" name = "email_address" placeholder="name@example.com" required>
+                        <output>
+                            Field must be a valid email (Ex: name@example.com).
+                        </output>
+                    </form-field>
                 </fieldset>
-                <label for = "message"> Message: </label>
-                <textarea id = "message" name = "message" maxlength="500" placeholder="Enter your comments here..." required></textarea>
+                <form-field>
+                    <label for = "message"> Message: </label>
+                    <textarea id = "message" name = "message" maxlength="500" placeholder="Enter your comments here..." required></textarea>
+                    <output>
+                        Maximum length is 500.
+                    </output>
+                </form-field>
                 <button class = "form-submit-button" type="submit">Submit</button>
             </form>
         </section>
