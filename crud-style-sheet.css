@@ -709,10 +709,10 @@ form {
 
   :root {
 
-    --default-font-size: clamp(0.4rem, 0.6rem, 0.8rem);
+    --default-font-size: clamp(1.1rem, 1.3rem, 1.5rem);
 
-    --button-padding-width: clamp(1.3rem, 1.5rem, 1.7rem);
-    --button-padding-height: clamp(0.8rem, 1rem, 1.2rem);
+    --button-padding-width: clamp(2.2rem, 2.4rem, 2.6rem);
+    --button-padding-height: clamp(1.8rem, 2rem, 2.2rem);
 
   }
 
